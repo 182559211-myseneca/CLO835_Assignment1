@@ -1,3 +1,4 @@
+
 name: CI/CD Pipeline for Containerized Application
 
 on: 
@@ -41,4 +42,5 @@ jobs:
         IMAGE_TAG: v1.1
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f Dockerfile .
+        # Docker Push
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
